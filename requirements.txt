@@ -1,0 +1,7 @@
+Flask
+PyPDF2
+langchain-community
+langchain_ollama
+langchain.text_splitter
+langchain.chains
+langchain.prompts
