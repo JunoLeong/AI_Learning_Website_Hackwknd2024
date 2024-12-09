@@ -11,7 +11,7 @@ import string
 app = Flask(__name__)
 
 # Configuration
-MARKDOWN_PATH = "Hackwknd1\data\English For Communication_Special Education_Form_2.md"
+MARKDOWN_PATH = "\data\English For Communication_Special Education_Form_2.md"
 VECTOR_STORE_DIR = "./vector_store"
 EMBEDDING_MODEL = "nomic-embed-text"
 LLM_MODEL = "llama3.1"
@@ -112,52 +112,6 @@ def query():
     app.logger.info(f"Query: {query_text} | Response: {response}")
     print("LLM Response:", response)
     return jsonify({'response': response})
-
-# Questions with correct answers
-# QUIZ_ANSWERS = {
-#     "text_question1": "C",
-#     "text_question2": "D",
-#     "text_question3": "B",
-#     "text_question4": "D",
-#     "text_question5": "A",
-#     "visual_question1": "B",
-#     "visual_question2": "C",
-#     "visual_question3": "D",
-#     "visual_question4": "B",
-#     "visual_question5": "A",
-#     "audio_question1": "B",
-#     "audio_question2": "C",
-#     "audio_question3": "B",
-#     "audio_question4": "C",
-#     "audio_question5": "C"
-# }
-
-@app.route("/check-answers", methods=["POST"])
-def check_answers():
-    return redirect(url_for('index'))
-
-#     Retrieve form data
-#     user_answers = request.form.to_dict()
-    
-#     Initialize scores
-#     scores = {"text": 0, "visual": 0, "audio": 0}
-    
-#     Calculate scores
-#     for question, correct_answer in QUIZ_ANSWERS.items():
-#         if question in user_answers and user_answers[question] == correct_answer:
-#             if question.startswith("text"):
-#                 scores["text"] += 1
-#             elif question.startswith("visual"):
-#                 scores["visual"] += 1
-#             elif question.startswith("audio"):
-#                 scores["audio"] += 1
-    
-#     Determine the highest section
-#     highest_section = max(scores, key=scores.get)
-    
-#     Redirect to results page with scores
-#     return render_template("result.html", scores=scores, highest_section=highest_section)
-
 
 if __name__ == '__main__':
     try:
