@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Results</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        header {
+            background: linear-gradient(90deg, #4b0082, #1e90ff);
+            color: white;
+            padding: 1% 3%;
+            display: flex;
+            flex-direction: row;
+        }
+        header h1 {
+            width: 39%;
+        }
+        header h1 a {
+            text-decoration: none;
+            color: white;
+        }
+        header h1 a:hover {
+            cursor: pointer;
+            color: #dbca0f;
+            text-shadow: 0px 2px 8px rgba(219, 202, 15, 0.6);
+            transform: scale(2); /* Slight zoom */
+        }
+        header nav {
+            width: 60%;
+            text-align: right;
+        }
+        header nav ul {
+            list-style-type: none;
+        }
+        header nav ul li {
+            display: inline-block;
+            padding-right: 3%;
+            padding-top: 1%;
+        }
+        header nav ul li a {
+            text-decoration: none;
+            color: white;
+            font-size: 1.2em;
+        }
+        header nav ul li a:hover {
+            cursor: pointer;
+            text-decoration: underline;
+            color: #dbca0f;
+            text-shadow: 0px 2px 8px rgba(219, 202, 15, 0.6);
+            transform: scale(2); /* Slight zoom */
+        }
+        footer {
+            text-align: center;
+            width: 97.8%;
+            margin-top: 0.5rem;
+            padding: 1rem;
+            bottom: 0;
+            background: #f1f1f1;
+            font-size: 1em;
+        }
+        body {
+            font-family: 'Arial', sans-serif;
+        }
+        .whole {
+            background-color: #edf3fc;
+            width: 100%;
+            margin: auto;
+            padding-top: 3%;
+        }
+        h2 {
+            text-align: center;
+            padding: 3% 1%;
+            background: linear-gradient(to right, #7F00FF, #00BFFF);
+            color: white;
+            width: 89%;
+            margin: auto;
+            border-radius: 25px;
+            font-size: 1.7em;
+        }
+        p, li {
+            font-size: 1.3em;
+        }
+        .chart-container {
+            width: 40%;
+            max-height: 350px;
+        }
+        .result {
+            margin-top: 2%;
+            width: 60%;
+            margin: 2% auto;
+        }
+        .result h3, .result p {
+            text-align: center;
+        }
+        h3 {
+            font-size: 1.5em;
+        }
+        .horizontal {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 10%;
+            padding: 3% 0;
+        }
+        .scores {
+            width: 20%;
+            text-align: center;
+            padding-left: 10%;
+        }
+        .chart-container {
+            width: 60%;
+        }
+        .study_type {
+            font-weight: bold;
+            color: red;
+            font-size: 1.3em;
+        }
+    </style>
+</head>
+<body>
+<header>
+    <h1><a href="/">AI Learning Website</a></h1>
+    <nav>
+        <ul>
+            <li><a href="/test_learning_style">Test Learning Style</a></li>
+            <li><a href="">AI Bot Query</a></li>
+            <li><a href="">Download Book</a></li>
+        </ul>
+    </nav>
+</header>
+<article>
+<div class="whole">
+    <h2>Results</h2>
+    <div class="result">
+        <h3>Your Learning Style:</h3>
+        <p>
+            You are most probably a <span class="study_type">{{ highest_section }}</span> learner. You may consider using the {{ highest_section }} study method.
+        </p>
+    </div>
+    <div class="horizontal">
+        <div class="scores">
+            <h3>Your Scores:</h3>
+            <ul>
+                <li>Text Section: {{ scores['text'] }}/5</li>
+                <li>Visual Section: {{ scores['visual'] }}/5</li>
+                <li>Audio Section: {{ scores['audio'] }}/5</li>
+            </ul>
+        </div>
+        <div class="chart-container">
+            <canvas id="scoresChart"></canvas>
+        </div>
+    </div>
+    <script>
+        // Passing scores dictionary from Flask
+        // A
+        console.log(score_new);  // For debugging in the browser console
+
+        // Example usage with Chart.js
+        const ctx = document.getElementById('scoresChart').getContext('2d');
+        new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ['Text', 'Visual', 'Audio'],
+                datasets: [{
+                    label: 'Scores',
+                    data: [score_new.text, score_new.visual, score_new.audio],
+                    backgroundColor: ['#1c298c', '#5661af', '#8a92ce']
+                }]
+            },
+            options: {
+                scales: {
+                    y: { beginAtZero: true }
+                }
+            }
+        });
+    </script>
+
+    <canvas id="scoresChart" width="400" height="200"></canvas>
+</body>
+</html>

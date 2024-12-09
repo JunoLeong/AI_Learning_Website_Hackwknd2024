@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+
+{% block title %}Chapter 1 Quiz{% endblock %}
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='learning_style.css') }}">
+{% endblock %}
+
+{% block content %}
+<article class="quiz">
+    <div class="quiz_title">
+        <h1>Test your understanding now!</h1>
+        <p>Answer the questions below.</p>
+    </div>
+    <form name="Chapter1_quiz" method="POST" action="/check-answers-chap1">
+        <fieldset>
+            <div class="text">    
+                <p class="ques">1. What is the title of the poem in Chapter 1?</p>
+                <p class="choice"><input type="radio" name="text_question1" value="A" id="text_question1a"><label for="text_question1a">My Heart, My Country</label></p>
+                <p class="choice"><input type="radio" name="text_question1" value="B" id="text_question1b"><label for="text_question1b">My Nation, My Love</label></p>
+                <p class="choice"><input type="radio" name="text_question1" value="C" id="text_question1c"><label for="text_question1c">Colours of Malaysia</label></p>
+                <p class="choice"><input type="radio" name="text_question1" value="D" id="text_question1d"><label for="text_question1d">New Life, New Friends</label></p>
+
+                <p class="ques">2. Which of the following is not mentioned as a traditional attire in the chapter?</p>
+                <p class="choice"><input type="radio" name="text_question2" value="A" id="text_question2a"><label for="text_question2a">Baju Kurung</label></p>
+                <p class="choice"><input type="radio" name="text_question2" value="B" id="text_question2b"><label for="text_question2b">Baju Melayu</label></p>
+                <p class="choice"><input type="radio" name="text_question2" value="C" id="text_question2c"><label for="text_question2c">Sari</label></p>
+                <p class="choice"><input type="radio" name="text_question2" value="D" id="text_question2d"><label for="text_question2d">Kimono</label></p>
+
+                <p class="ques">3. What is the main moral value emphasized in the chapter?</p>
+                <p class="choice"><input type="radio" name="text_question3" value="A" id="text_question3a"><label for="text_question3a">Respect for elders</label></p>
+                <p class="choice"><input type="radio" name="text_question3" value="B" id="text_question3b"><label for="text_question3b">Live together, respect each other</label></p>
+                <p class="choice"><input type="radio" name="text_question3" value="C" id="text_question3c"><label for="text_question3c">Caring for the environment</label></p>
+                <p class="choice"><input type="radio" name="text_question3" value="D" id="text_question3d"><label for="text_question3d">Honesty is the best policy</label></p>
+
+                <p class="ques">4. What is the activity for the poem "My Nation, My Love"?</p>
+                <p class="choice"><input type="radio" name="text_question4" value="A" id="text_question4a"><label for="text_question4a">Role play the poem</label></p>
+                <p class="choice"><input type="radio" name="text_question4" value="B" id="text_question4b"><label for="text_question4b">Listen to the audio and pronounce the words correctly</label></p>
+                <p class="choice"><input type="radio" name="text_question4" value="C" id="text_question4c"><label for="text_question4c">Draw a picture related to the poem</label></p>
+                <p class="choice"><input type="radio" name="text_question4" value="D" id="text_question4d"><label for="text_question4d">Write a poem about Malaysia</label></p>
+
+                <p class="ques">5. What is the purpose of the informal letter in Chapter 1?</p>
+                <p class="choice"><input type="radio" name="text_question5" value="A" id="text_question5a"><label for="text_question5a">To share an experience about attending a cultural show</label></p>
+                <p class="choice"><input type="radio" name="text_question5" value="B" id="text_question5b"><label for="text_question5b">To explain how to celebrate National Day</label></p>
+                <p class="choice"><input type="radio" name="text_question5" value="C" id="text_question5c"><label for="text_question5c">To describe different Malaysian cities</label></p>
+                <p class="choice"><input type="radio" name="text_question5" value="D" id="text_question5d"><label for="text_question5d">To invite friends to a poetry event</label></p>
+            </div>
+        </fieldset>
+    </form>
+</article>
+{% endblock %}
+
+
+    <!--Answer
+    b) My Nation, My Love
+    d) Kimono
+    b) Live together, respect each other
+    b) Listen to the audio and pronounce the words correctly
+    a) To share an experience about attending a cultural show
+        -->

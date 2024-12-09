@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+
+{% block title %}Chapter 2: LOVABLE PEOPLE - Quiz{% endblock %}
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='learning_style.css') }}">  <!-- Optional custom CSS -->
+{% endblock %}
+
+{% block content %}
+<article class="quiz">
+    <div class="quiz_title">
+        <h1>Test your understanding now!</h1>
+        <p>Answer the questions below.</p>
+    </div>
+    <form name="Chapter2_quiz" method="POST" action="/check-answers-chap2">
+        <fieldset>
+            <div class="text">    
+                <p class="ques">1. What is the title of the song in Chapter 2?</p>
+                <p class="choice"><input type="radio" name="text_question1" value="A" id="text_question1a"><label for="text_question1a">My Lovable Friends</label></p>
+                <p class="choice"><input type="radio" name="text_question1" value="B" id="text_question1b"><label for="text_question1b">Lovable Friends</label></p>
+                <p class="choice"><input type="radio" name="text_question1" value="C" id="text_question1c"><label for="text_question1c">Friends Forever</label></p>
+                <p class="choice"><input type="radio" name="text_question1" value="D" id="text_question1d"><label for="text_question1d">The Joy of Friendship</label></p>
+
+                <p class="ques">2. What moral value is emphasized in Chapter 2?</p>
+                <p class="choice"><input type="radio" name="text_question2" value="A" id="text_question2a"><label for="text_question2a">Be kind and caring</label></p>
+                <p class="choice"><input type="radio" name="text_question2" value="B" id="text_question2b"><label for="text_question2b">Always tell the truth</label></p>
+                <p class="choice"><input type="radio" name="text_question2" value="C" id="text_question2c"><label for="text_question2c">Respect for elders</label></p>
+                <p class="choice"><input type="radio" name="text_question2" value="D" id="text_question2d"><label for="text_question2d">Honesty is the best policy</label></p>
+
+                <p class="ques">3. Who fell into the pit in the story of "Froggy and His Friends"?</p>
+                <p class="choice"><input type="radio" name="text_question3" value="A" id="text_question3a"><label for="text_question3a">Froggy and his friends</label></p>
+                <p class="choice"><input type="radio" name="text_question3" value="B" id="text_question3b"><label for="text_question3b">Two of Froggy's friends</label></p>
+                <p class="choice"><input type="radio" name="text_question3" value="C" id="text_question3c"><label for="text_question3c">Froggy</label></p>
+                <p class="choice"><input type="radio" name="text_question3" value="D" id="text_question3d"><label for="text_question3d">None of them</label></p>
+
+                <p class="ques">4. What did Froggy and his friends do to help the two who fell into the pit?</p>
+                <p class="choice"><input type="radio" name="text_question4" value="A" id="text_question4a"><label for="text_question4a">Gave them food</label></p>
+                <p class="choice"><input type="radio" name="text_question4" value="B" id="text_question4b"><label for="text_question4b">Encouraged them to jump</label></p>
+                <p class="choice"><input type="radio" name="text_question4" value="C" id="text_question4c"><label for="text_question4c">Called for help</label></p>
+                <p class="choice"><input type="radio" name="text_question4" value="D" id="text_question4d"><label for="text_question4d">Waited for someone to pass by</label></p>
+
+                <p class="ques">5. Which of the following words is not part of the vocabulary lesson in the story "Froggy and His Friends"?</p>
+                <p class="choice"><input type="radio" name="text_question5" value="A" id="text_question5a"><label for="text_question5a">Deep</label></p>
+                <p class="choice"><input type="radio" name="text_question5" value="B" id="text_question5b"><label for="text_question5b">Pit</label></p>
+                <p class="choice"><input type="radio" name="text_question5" value="C" id="text_question5c"><label for="text_question5c">Nervous</label></p>
+                <p class="choice"><input type="radio" name="text_question5" value="D" id="text_question5d"><label for="text_question5d">Happy</label></p>
+            </div>
+        </fieldset>
+    </form>
+</article>
+{% endblock %}
+
+
+    <!--Answer
+        b) Lovable Friends
+        a) Be kind and caring
+        b) Two of Froggy's friends
+        b) Encouraged them to jump
+        d) Happy
+        -->

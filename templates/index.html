@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home</title>
+	<style>
+		body, html {
+			margin: 0;
+			padding: 0;
+			width: 100%;
+			height: 100%;
+		}
+
+		header {
+			background-image: url('static/img/background.jpeg');
+			min-height: 600px;
+			background-size: cover; /* Ensures the image fully covers the header */
+			background-repeat: no-repeat;
+			background-position: center; /* Centers the image */
+			width: 100%; /* Ensure full width */
+			display: flex;
+			align-items: center; 
+			justify-content: space-between;
+			margin: 0; /* Reset any margins */
+			padding: 0; /* Reset any padding */
+		}
+
+
+		header nav{
+			text-align:center;
+		}
+		header nav ul{
+			list-style-type: none;
+		}
+		header nav ul li{
+			display:inline-block;
+			padding:1% 3%;
+			border-radius:5px;
+			background-color:#7F00FF;
+		}
+		header nav ul li a{
+			text-decoration: none;
+			color:white;
+			font-size:1.2em;
+		}
+		header nav ul li a:hover{
+			cursor:pointer;
+			text-decoration: underline;
+			color: #dbca0f;
+			text-shadow: 0px 2px 8px rgba(219, 202, 15, 0.6);
+			transform: scale(2); /* Slight zoom */
+		}
+		h1{
+			width:100%;
+			text-align:center;
+			font-size:3em;
+		}
+		.home_header{
+			background-color: rgba(255, 255, 255, 0.8);
+			margin:auto;
+			border-radius:15px;
+			padding: 0 5%;
+		}
+		body{
+			font-family: Arial, sans-serif;
+		}
+		footer {
+			text-align: center;
+			width: 100%;
+			left: 0;
+			margin-top: 0.5rem;
+			padding: 1rem;
+			bottom: 0;
+			background: #f1f1f1;
+			font-size:1em;
+		}
+	</style>
+</head>
+
+<body>
+<header>
+	<div class="home_header">
+    <h1>AI Learning Website</h1>
+	<p>AI-powered learning tool with different learning methods and an interactive bot for material-related questions.<p>
+	<nav>
+		<ul>
+			<li><a href="/learning_style_test">Test Learning Style</a></li>
+			<li><a href="/chatbot">AI Bot Query</a></li>
+			<li><a href="/download">Download Book</a></li>
+		</ul>
+	</nav>
+	</div>
+</header>
+
+<article>
+	
+</article>
+<footer>
+    <p>&copy; 2024 Learning ChatBot</p>
+</footer>
+</body>
+</html>

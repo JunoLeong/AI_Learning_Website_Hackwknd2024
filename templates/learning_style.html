@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learning Style Quiz</title>
+	<style>
+		header{
+			background: linear-gradient(90deg, #4b0082, #1e90ff);
+			color: white;
+			padding:1% 3%;
+			display:flex;
+			flex-direction:row;
+		}
+		header h1{
+			width:39%;
+		}
+		header h1 a{
+			text-decoration: none;
+			color: white;
+		}
+		header h1 a:hover{
+			cursor: pointer;
+			color: #dbca0f;
+			text-shadow: 0px 2px 8px rgba(219, 202, 15, 0.6);
+			transform: scale(2); /* Slight zoom */
+		}
+		header nav{
+			width:60%;
+			text-align:right;
+		}
+		header nav ul{
+			list-style-type: none;
+		}
+		header nav ul li{
+			display:inline-block;
+			padding-right:3%;
+			padding-top:1%;
+		}
+		header nav ul li a{
+			text-decoration: none;
+			color:white;
+			font-size:1.3em;
+		}
+		header nav ul li a:hover{
+			cursor: pointer;
+			text-decoration: underline;
+			color: #dbca0f;
+			text-shadow: 0px 2px 8px rgba(219, 202, 15, 0.6);
+			transform: scale(2); /* Slight zoom */
+		}
+		footer {
+			text-align: center;
+			width: 97.8%;
+			left: 0;
+			margin-top: 0.5rem;
+			padding: 1rem;
+			bottom: 0;
+			background: #f1f1f1;
+			font-size:1em;
+		}
+		body{
+			background: linear-gradient(to right, #fcfcfc, #f7f8ff);
+			font-family: Arial, sans-serif;
+		}
+
+		body, html {
+			margin: 0;
+			padding: 0;
+			width: 100%;
+			height: 100%;
+		}
+
+		div.learning_h1{
+			text-align:center;
+			padding:3% 1%;
+			background: linear-gradient(to right, #7F00FF, #00BFFF);
+			color:white;
+			width:89%;
+			margin: auto;
+			border-radius:25px;
+			font-size:1.2em;
+			margin-top:3%;
+		}
+		.learning_h1 h2{
+			text-align:center;
+			font-size:2em;
+			color:white;
+		}
+		.learning_h1 p{
+			text-align:center;
+			font-size:1.2em;
+			color:white;
+		}
+		.learning_style fieldset{
+			margin:auto;
+			width:60%;
+			margin-top:4%;
+			padding: 0 2%;
+			border:1px solid #050587;
+		}
+		.learning_style legend{
+			font-size:1.5em;
+			text-align:center;
+			border:1px solid #0000ff;
+			border-radius:25px;
+			padding:1% 2%;
+			background-color:#0000ff;
+			color:white;
+			min-width:60%;
+		}
+		.material{
+			text-align:center;
+			padding:2% 1%;
+		}
+		.learning_style p{
+			font-size:1.2em;
+		}
+		p.ques{
+			background-color:white;
+			border:2px solid #3f3fff;
+			border-radius:10px;
+			padding:1%
+		}
+		p.choice{
+			background-color:#c6e6fb;
+			border-radius:10px;
+			padding:0.5%;
+		}
+		#learning_button{
+			text-align:center;
+			margin:auto;
+			padding:2% 0;
+		}
+		input[type="submit"]{
+			background: linear-gradient(to right, #7F00FF, #00BFFF);
+			border-radius:25px;
+			font-size:1.3em;
+			color:white;
+			padding:1% 10%;
+			border:none;
+		}
+		input[type="submit"] {
+			background-color: #0f0fff; 
+			color: white; 
+			font-size: 1.3em;
+			padding: 1% 15%; 
+			border: none; 
+			border-radius: 20px; 
+			cursor: pointer;
+			box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+			transition: all 0.3s ease; 
+		}
+
+		input[type="submit"]:hover {
+			background-color: #00bfff; 
+			box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.3); 
+			transform: scale(1.05); 
+		}
+
+		input[type="submit"]:focus {
+			background-color: #0099cc;
+			box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.4); 
+			transform: scale(0.98); 
+		}
+	</style>
+</head>
+<body>
+<header>
+    <h1><a href="/">AI Learning Website</a></h1>
+	<nav>
+		<ul>
+			<li><a href="/learning_style_test">Test Learning Style</a></li>
+			<li><a href="/chatbot">AI Bot Query</a></li>
+			<li><a href="/download">Download Book</a></li>
+		</ul>
+	</nav>
+</header>
+<article class="learning_style">
+	<div class="learning_h1">
+		<h2>Explore your learning method now!</h2>
+		<p>Answer the questions below based on the material given.</p>
+	</div>
+    <form name="learning_style_quiz" method="POST" action="/check-answers">
+	<fieldset>
+	<legend>Text Method</legend>
+    <div class="text">
+        <p class="material">Volcanoes are openings in Earth's surface where molten rock, ash, and gases escape from beneath the ground. They can be found on land and underwater. Some volcanoes are active and erupt frequently, while others are dormant or extinct. Volcanic eruptions can be extremely powerful, destroying nearby areas but also creating new land and rich soil for plants to grow.</p>
+        
+        <p class="ques">1: What is a volcano?</p>
+        <p class="choice"><input type="radio" name="text_question1" value="A" id="text_question1a"><label for="text_question1a">A type of mountain</label></p>
+        <p class="choice"><input type="radio" name="text_question1" value="B" id="text_question1b"><label for="text_question1b">A river of rock</label></p>
+        <p class="choice"><input type="radio" name="text_question1" value="C" id="text_question1c"><label for="text_question1c">An opening in Earth's surface</label></p>
+        <p class="choice"><input type="radio" name="text_question1" value="D" id="text_question1d"><label for="text_question1d">A type of earthquake</label></p>
+
+        <p class="ques">2: Where can volcanoes be found?</p>
+        <p class="choice"><input type="radio" name="text_question2" value="A" id="text_question2a"><label for="text_question2a">Only on mountains</label></p>
+        <p class="choice"><input type="radio" name="text_question2" value="B" id="text_question2b"><label for="text_question2b">Only in deserts</label></p>
+        <p class="choice"><input type="radio" name="text_question2" value="C" id="text_question2c"><label for="text_question2c">Only underwater</label></p>
+        <p class="choice"><input type="radio" name="text_question2" value="D" id="text_question2d"><label for="text_question2d">On land and underwater</label></p>
+
+        <p class="ques">3: What happens during a volcanic eruption?</p>
+        <p class="choice"><input type="radio" name="text_question3" value="A" id="text_question3a"><label for="text_question3a">Clouds form</label></p>
+        <p class="choice"><input type="radio" name="text_question3" value="B" id="text_question3b"><label for="text_question3b">Molten rock and ash escape</label></p>
+        <p class="choice"><input type="radio" name="text_question3" value="C" id="text_question3c"><label for="text_question3c">Earthquakes occur</label></p>
+        <p class="choice"><input type="radio" name="text_question3" value="D" id="text_question3d"><label for="text_question3d">Plants grow</label></p>
+
+        <p class="ques">4: What can volcanic eruptions create?</p>
+        <p class="choice"><input type="radio" name="text_question4" value="A" id="text_question4a"><label for="text_question4a">Oceans</label></p>
+        <p class="choice"><input type="radio" name="text_question4" value="B" id="text_question4b"><label for="text_question4b">Deserts</label></p>
+        <p class="choice"><input type="radio" name="text_question4" value="C" id="text_question4c"><label for="text_question4c">Ice</label></p>
+        <p class="choice"><input type="radio" name="text_question4" value="D" id="text_question4d"><label for="text_question4d">New land and rich soil</label></p>
+
+        <p class="ques">5: How are volcanoes classified?</p>
+        <p class="choice"><input type="radio" name="text_question5" value="A" id="text_question5a"><label for="text_question5a">Active, dormant, or extinct</label></p>
+        <p class="choice"><input type="radio" name="text_question5" value="B" id="text_question5b"><label for="text_question5b">Small, medium, large</label></p>
+        <p class="choice"><input type="radio" name="text_question5" value="C" id="text_question5c"><label for="text_question5c">Red, blue, green</label></p>
+        <p class="choice"><input type="radio" name="text_question5" value="D" id="text_question5d"><label for="text_question5d">Round or square</label></p>
+    </div>
+	</fieldset>
+	<fieldset>
+	<legend>Visual Method</legend>
+    <div class="visual">
+        <div class="material"><img src="{{ url_for('static', filename='img/mindmap_test.jpeg') }}" alt="image_question" height="250"></div>
+
+        <p class="ques">1: What causes earthquakes?</p>
+        <p class="choice"><input type="radio" name="visual_question1" value="A" id="visual_question1a"><label for="visual_question1a">Volcanic eruptions</label></p>
+        <p class="choice"><input type="radio" name="visual_question1" value="B" id="visual_question1b"><label for="visual_question1b">Movements of tectonic plates</label></p>
+        <p class="choice"><input type="radio" name="visual_question1" value="C" id="visual_question1c"><label for="visual_question1c">Wind pressure</label></p>
+        <p class="choice"><input type="radio" name="visual_question1" value="D" id="visual_question1d"><label for="visual_question1d">Ocean currents</label></p>
+
+        <p class="ques">2: How are earthquakes measured?</p>
+        <p class="choice"><input type="radio" name="visual_question2" value="A" id="visual_question2a"><label for="visual_question2a">By weight</label></p>
+        <p class="choice"><input type="radio" name="visual_question2" value="B" id="visual_question2b"><label for="visual_question2b">By color</label></p>
+        <p class="choice"><input type="radio" name="visual_question2" value="C" id="visual_question2c"><label for="visual_question2c">Richter scale</label></p>
+        <p class="choice"><input type="radio" name="visual_question2" value="D" id="visual_question2d"><label for="visual_question2d">By temperature</label></p>
+
+        <p class="ques">3: Which region experiences more earthquakes?</p>
+        <p class="choice"><input type="radio" name="visual_question3" value="A" id="visual_question3a"><label for="visual_question3a">Arctic Circle</label></p>
+        <p class="choice"><input type="radio" name="visual_question3" value="B" id="visual_question3b"><label for="visual_question3b">Sahara Desert</label></p>
+        <p class="choice"><input type="radio" name="visual_question3" value="C" id="visual_question3c"><label for="visual_question3c">Antarctic region</label></p>
+        <p class="choice"><input type="radio" name="visual_question3" value="D" id="visual_question3d"><label for="visual_question3d">Pacific Ring of Fire</label></p>
+
+        <p class="ques">4: What can earthquakes cause?</p>
+        <p class="choice"><input type="radio" name="visual_question4" value="A" id="visual_question4a"><label for="visual_question4a">Rain</label></p>
+        <p class="choice"><input type="radio" name="visual_question4" value="B" id="visual_question4b"><label for="visual_question4b">Damage to buildings</label></p>
+        <p class="choice"><input type="radio" name="visual_question4" value="C" id="visual_question4c"><label for="visual_question4c">Plant growth</label></p>
+        <p class="choice"><input type="radio" name="visual_question4" value="D" id="visual_question4d"><label for="visual_question4d">Cloud formation</label></p>
+
+        <p class="ques">5: Where do earthquakes occur?</p>
+        <p class="choice"><input type="radio" name="visual_question5" value="A" id="visual_question5a"><label for="visual_question5a">Underground rock layers</label></p>
+        <p class="choice"><input type="radio" name="visual_question5" value="B" id="visual_question5b"><label for="visual_question5b">Ocean surface</label></p>
+        <p class="choice"><input type="radio" name="visual_question5" value="C" id="visual_question5c"><label for="visual_question5c">Mountain peaks</label></p>
+        <p class="choice"><input type="radio" name="visual_question5" value="D" id="visual_question5d"><label for="visual_question5d">Desert areas</label></p>
+
+    </div>
+	</fieldset>
+	<fieldset>
+	<legend>Audio Method</legend>
+    <div name="audio">
+        <div class="material">
+		<audio controls>
+			<source src="{{ url_for('static', filename='mp3/audio_test.mp3') }}" type="audio/mpeg">
+			Your browser does not support the audio element.
+		</audio>
+		</div>
+
+	
+        <p class="ques">1: What is the main role of a queen bee?</p>
+        <p class="choice"><input type="radio" name="audio_question1" value="A" id="audio_question1a"><label for="audio_question1a">Collecting nectar</label></p>
+        <p class="choice"><input type="radio" name="audio_question1" value="B" id="audio_question1b"><label for="audio_question1b">Laying eggs</label></p>
+        <p class="choice"><input type="radio" name="audio_question1" value="C" id="audio_question1c"><label for="audio_question1c">Defending the hive</label></p>
+        <p class="choice"><input type="radio" name="audio_question1" value="D" id="audio_question1d"><label for="audio_question1d">Making honey</label></p>
+
+        <p class="ques">2: How do worker bees communicate about food locations?</p>
+        <p class="choice"><input type="radio" name="audio_question2" value="A" id="audio_question2a"><label for="audio_question2a">Singing</label></p>
+        <p class="choice"><input type="radio" name="audio_question2" value="B" id="audio_question2b"><label for="audio_question2b">Through chemical signals</label></p>
+        <p class="choice"><input type="radio" name="audio_question2" value="C" id="audio_question2c"><label for="audio_question2c">Dance movements</label></p>
+        <p class="choice"><input type="radio" name="audio_question2" value="D" id="audio_question2d"><label for="audio_question2d">Using loud buzzing</label></p>
+
+        <p class="ques">3: How many types of bees exist in a typical colony?</p>
+        <p class="choice"><input type="radio" name="audio_question3" value="A" id="audio_question3a"><label for="audio_question3a">2</label></p>
+        <p class="choice"><input type="radio" name="audio_question3" value="B" id="audio_question3b"><label for="audio_question3b">3</label></p>
+        <p class="choice"><input type="radio" name="audio_question3" value="C" id="audio_question3c"><label for="audio_question3c">4</label></p>
+        <p class="choice"><input type="radio" name="audio_question3" value="D" id="audio_question3d"><label for="audio_question3d">5</label></p>
+
+        <p class="ques">4: Which bee type is responsible for collecting nectar?</p>
+        <p class="choice"><input type="radio" name="audio_question4" value="A" id="audio_question4a"><label for="audio_question4a">Queen bees</label></p>
+        <p class="choice"><input type="radio" name="audio_question4" value="B" id="audio_question4b"><label for="audio_question4b">Drone bees</label></p>
+        <p class="choice"><input type="radio" name="audio_question4" value="C" id="audio_question4c"><label for="audio_question4c">Worker bees</label></p>
+        <p class="choice"><input type="radio" name="audio_question4" value="D" id="audio_question4d"><label for="audio_question4d">Baby bees</label></p>
+
+        <p class="ques">5: What is a bee colony?</p>
+        <p class="choice"><input type="radio" name="audio_question5" value="A" id="audio_question5a"><label for="audio_question5a">A type of flower</label></p>
+        <p class="choice"><input type="radio" name="audio_question5" value="B" id="audio_question5b"><label for="audio_question5b">A single bee's home</label></p>
+        <p class="choice"><input type="radio" name="audio_question5" value="C" id="audio_question5c"><label for="audio_question5c">A complex social group</label></p>
+        <p class="choice"><input type="radio" name="audio_question5" value="D" id="audio_question5d"><label for="audio_question5d">A type of honey production site</label></p>
+    </div>
+	</fieldset>
+	<div id="learning_button"><input type="submit" value="Submit"></button>
+    </form>
+</article>
+<footer>
+   <p>&copy; 2024 Learning ChatBot</p>
+</footer>
+</body>
+</html>
