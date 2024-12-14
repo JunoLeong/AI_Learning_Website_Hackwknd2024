@@ -4,5 +4,3 @@ AI Learning Website is a rapid prototype developed by **Team EduSolve** during *
 
 Project Details: [AI Learning Website.pdf](https://github.com/user-attachments/files/18064874/AI.Learning.Website.pdf)
 
-## Contributors
-[![Contributors](https://contrib.rocks/image?repo=NirDiamant/RAG_Techniques)](https://github.com/NirDiamant/RAG_Techniques/graphs/contributors)
